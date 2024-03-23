@@ -17,17 +17,17 @@ try {
     //Server settings
     $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
     $mail->isSMTP();                                            //Send using SMTP
-    $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+    $mail->Host       = 'smtp.rsweb.com.br';                     //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = 'doutorjoseclaudioadv@gmail.com';                     //SMTP username
-    $mail->Password   = 'Resultado@2024rsweb';                               //SMTP password
+    $mail->Username   = 'comercial2@rsweb.com.br';                     //SMTP username
+    $mail->Password   = 'nisexandi2';                               //SMTP password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
     $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     //Recipients
-    $mail->setFrom('doutorjoseclaudioadv@gmail.com', 'José Claudio');
-    $mail->addAddress('doutorjoseclaudioadv@gmail.com', 'José Claudio');     //Add a recipient
-    $mail->addReplyTo('doutorjoseclaudioadv@gmail.com', 'José Claudio');
+    $mail->setFrom('comercial2@rsweb.com.br', 'José Claudio');
+    $mail->addAddress('comercial2@rsweb.com.br', 'José Claudio');     //Add a recipient
+    $mail->addReplyTo('comercial2@rsweb.com.br', 'José Claudio');
 
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
