@@ -41,29 +41,55 @@
 
 <?php
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+// Carregar o autoload do PHPMailer
+require 'PHPMailer-master/src/Exception.php';
+require 'PHPMailer-master/src/PHPMailer.php';
+require 'PHPMailer-master/src/SMTP.php';
+
 function enviar_email($destinatario, $assunto, $mensagem) {
-    if (empty($destinatario) || empty($assunto) || empty($mensagem)) {
-        return false;
-    }
+    // Instanciar o objeto PHPMailer
+    $mail = new PHPMailer(true);
 
-    $remetente = "rsfreelas@gmail.com"; 
-    $headers = "From: $remetente\r\n";
-    $headers .= "Reply-To: $remetente\r\n";
-    $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
+    try {
+        // Configurações do servidor SMTP
+        $mail->isSMTP();
+        $mail->Host       = 'smtp.example.com'; // Altere para o seu servidor SMTP
+        $mail->SMTPAuth   = true;
+        $mail->Username   = 'rsfreelas@gmail.com'; // Altere para o seu endereço de e-mail
+        $mail->Password   = 'nisexandi2';
+        $mail->SMTPSecure = 'tls';
+        $mail->Port       = 587;
 
-    if (mail($destinatario, $assunto, $mensagem, $headers)) {
+        // Configurações de remetente e destinatário
+        $mail->setFrom('rsfreelas@gmail.com', 'Vinícius Alexandre');
+        $mail->addAddress($destinatario);
+
+        // Conteúdo do e-mail
+        $mail->isHTML(true);
+        $mail->Subject = $assunto;
+        $mail->Body    = $mensagem;
+
+        // Enviar o e-mail
+        $mail->send();
         return true;
-    } else {
+    } catch (Exception $e) {
+        // Exceção: erro ao enviar o e-mail
         return false;
     }
 }
 
+// Verificar se o formulário foi enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nome = $_POST['name'];
-    $nome = $_POST['email'];
-    $destinatario = $_POST["phone"];
+    // Coletar dados do formulário
+    $nome = $_POST["name"];
+    $email = $_POST["email"];
+    $telefone = $_POST["phone"];
     $assunto = $_POST["subject"];
     $mensagem = $_POST["message"];
+    $destinatario = "vinicius.xande30@gmail.com";
 
     // Enviar e-mail
     if (enviar_email($destinatario, $assunto, $mensagem)) {
@@ -74,6 +100,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 ?>
+
 
 
 
