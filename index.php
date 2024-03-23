@@ -56,7 +56,7 @@ function enviar_email($destinatario, $assunto, $mensagem) {
     try {
         // Configurações do servidor SMTP
         $mail->isSMTP();
-        $mail->Host       = 'smtp.example.com'; // Altere para o seu servidor SMTP
+        $mail->Host       = 'smtp.gmail.com'; // Altere para o seu servidor SMTP
         $mail->SMTPAuth   = true;
         $mail->Username   = 'rsfreelas@gmail.com'; // Altere para o seu endereço de e-mail
         $mail->Password   = 'nisexandi2';
