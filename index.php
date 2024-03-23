@@ -560,7 +560,7 @@
                             <img src="assets/images/resources/contact-image.jpg" alt="">    
                         </div>
                         <div class="contact-form">
-                            <form  action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
+                            <form  action="mail.php" method="post">
                                 <div class="row">
                                     <div class="col-xl-6">
                                         <div class="input-box"> 
