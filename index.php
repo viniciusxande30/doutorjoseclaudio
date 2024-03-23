@@ -557,7 +557,7 @@
                             <img src="assets/images/resources/contact-image.jpg" alt="">    
                         </div>
                         <div class="contact-form">
-                            <form id="contact-form" name="contact_form" class="default-form2" action="mail.php" method="post">
+                            <form  action="mail.php" method="post">
                                 <div class="row">
                                     <div class="col-xl-6">
                                         <div class="input-box"> 
@@ -577,12 +577,8 @@
                                         <div class="input-box">    
                                             <textarea name="message" placeholder="Escreva sua Mensagem" required=""></textarea>
                                         </div>
-                                        <div class="button-box">
-                                            <input id="form_botcheck" name="form_botcheck" class="form-control" type="hidden" value="">
-                                            <button class="btn-one style2" type="submit" data-loading-text="Please wait...">
-                                                <span class="txt">Enviar Mensagem</span>
-                                            </button> 
-                                        </div>    
+                                        <input type="submit" value="Enviar">
+
                                     </div>
                                 </div>
                             </form>

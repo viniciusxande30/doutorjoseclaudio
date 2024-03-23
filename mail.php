@@ -1,18 +1,15 @@
 <?php
 
 function enviar_email($destinatario, $assunto, $mensagem) {
-    // Verificar se os parâmetros estão vazios
     if (empty($destinatario) || empty($assunto) || empty($mensagem)) {
         return false;
     }
 
-    // Configurações de e-mail
-    $remetente = "rsfreelas@gmail.com"; // Altere para o seu endereço de e-mail
+    $remetente = "rsfreelas@gmail.com"; 
     $headers = "From: $remetente\r\n";
     $headers .= "Reply-To: $remetente\r\n";
     $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 
-    // Tenta enviar o e-mail
     if (mail($destinatario, $assunto, $mensagem, $headers)) {
         return true;
     } else {
@@ -20,9 +17,7 @@ function enviar_email($destinatario, $assunto, $mensagem) {
     }
 }
 
-// Verificar se o formulário foi enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Coletar dados do formulário
     $nome = $_POST['name'];
     $nome = $_POST['email'];
     $destinatario = $_POST["phone"];
