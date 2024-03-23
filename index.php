@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
 	<meta charset="UTF-8">
-	<title>Doutor José Claudio_</title>
+	<title>Doutor José Claudio</title>
 
 	<!-- responsive meta -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -557,25 +557,25 @@
                             <img src="assets/images/resources/contact-image.jpg" alt="">    
                         </div>
                         <div class="contact-form">
-                            <form id="contact-form" name="contact_form" class="default-form2" action="assets/inc/sendmail.php" method="post">
+                            <form id="contact-form" name="contact_form" class="default-form2" action="mail.php" method="post">
                                 <div class="row">
                                     <div class="col-xl-6">
                                         <div class="input-box"> 
-                                            <input type="text" name="form_name" value="" placeholder="Seu Nome" required="">
+                                            <input type="text" name="name" value="" placeholder="Seu Nome" required="">
                                         </div>
                                         <div class="input-box"> 
-                                            <input type="email" name="form_email" value="" placeholder="Seu E-mail" required="">
+                                            <input type="email" name="email" value="" placeholder="Seu E-mail" required="">
                                         </div>
                                         <div class="input-box"> 
-                                            <input type="text" name="form_phone" value="" placeholder="Número de Telefone">
+                                            <input type="text" name="phone" value="" placeholder="Número de Telefone">
                                         </div>
                                         <div class="input-box"> 
-                                            <input type="text" name="form_subject" value="" placeholder="Assunto">
+                                            <input type="text" name="subject" value="" placeholder="Assunto">
                                         </div>        
                                     </div>
                                     <div class="col-xl-6">
                                         <div class="input-box">    
-                                            <textarea name="form_message" placeholder="Escreva sua Mensagem" required=""></textarea>
+                                            <textarea name="message" placeholder="Escreva sua Mensagem" required=""></textarea>
                                         </div>
                                         <div class="button-box">
                                             <input id="form_botcheck" name="form_botcheck" class="form-control" type="hidden" value="">
