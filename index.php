@@ -56,15 +56,15 @@ function enviar_email($destinatario, $assunto, $mensagem) {
     try {
         // Configurações do servidor SMTP
         $mail->isSMTP();
-        $mail->Host       = 'smtp.gmail.com'; // Altere para o seu servidor SMTP
+        $mail->Host       = 'mail.rsweb.com.br'; // Altere para o seu servidor SMTP
         $mail->SMTPAuth   = true;
-        $mail->Username   = 'rsfreelas@gmail.com'; // Altere para o seu endereço de e-mail
+        $mail->Username   = 'comercial2@rsweb.com.br'; // Altere para o seu endereço de e-mail
         $mail->Password   = 'nisexandi2';
         $mail->SMTPSecure = 'tls';
-        $mail->Port       = 587;
+        $mail->Port       = 465;
 
         // Configurações de remetente e destinatário
-        $mail->setFrom('rsfreelas@gmail.com', 'Vinícius Alexandre');
+        $mail->setFrom('comercial2@rsweb.com.br', 'Vinícius Alexandre');
         $mail->addAddress($destinatario);
 
         // Conteúdo do e-mail
