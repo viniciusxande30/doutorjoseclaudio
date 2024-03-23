@@ -39,69 +39,6 @@
 </head>
 
 
-<?php
-
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-
-// Carregar o autoload do PHPMailer
-require 'PHPMailer-master/src/Exception.php';
-require 'PHPMailer-master/src/PHPMailer.php';
-require 'PHPMailer-master/src/SMTP.php';
-
-function enviar_email($destinatario, $assunto, $mensagem) {
-    // Instanciar o objeto PHPMailer
-    $mail = new PHPMailer(true);
-
-    try {
-        // Configurações do servidor SMTP
-        $mail->isSMTP();
-        $mail->Host       = 'smtp.rsweb.com.br'; // Altere para o seu servidor SMTP
-        $mail->SMTPAuth   = true;
-        $mail->Username   = 'comercial2@rsweb.com.br'; // Altere para o seu endereço de e-mail
-        $mail->Password   = 'nisexandi2';
-        $mail->SMTPSecure = 'tls';
-        $mail->Port       = 587;
-
-        // Configurações de remetente e destinatário
-        $mail->setFrom('comercial2@rsweb.com.br', 'Vinícius Alexandre');
-        $mail->addAddress($destinatario);
-
-        // Conteúdo do e-mail
-        $mail->isHTML(true);
-        $mail->Subject = $assunto;
-        $mail->Body    = $mensagem;
-
-        // Enviar o e-mail
-        $mail->send();
-        return true;
-    } catch (Exception $e) {
-        // Exceção: erro ao enviar o e-mail
-        return false;
-    }
-}
-
-// Verificar se o formulário foi enviado
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Coletar dados do formulário
-    $nome = $_POST["name"];
-    $email = $_POST["email"];
-    $telefone = $_POST["phone"];
-    $assunto = $_POST["subject"];
-    $mensagem = $_POST["message"];
-    $destinatario = "vinicius.xande30@gmail.com";
-
-    // Enviar e-mail
-    if (enviar_email($destinatario, $assunto, $mensagem)) {
-        echo "E-mail enviado com sucesso!";
-    } else {
-        echo "Erro ao enviar o e-mail. Por favor, tente novamente.";
-    }
-}
-
-?>
-
-
 
 
 <body>
@@ -643,7 +580,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         <div class="input-box">    
                                             <textarea name="message" placeholder="Escreva sua Mensagem" required=""></textarea>
                                         </div>
-                                        <input type="submit" value="Enviar">
+                                        <input type="submit" value="Enviar" name="enviar">
 
                                     </div>
                                 </div>

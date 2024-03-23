@@ -1,35 +1,45 @@
 <?php
+//Import PHPMailer classes into the global namespace
+//These must be at the top of your script, not inside a function
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
 
-function enviar_email($destinatario, $assunto, $mensagem) {
-    if (empty($destinatario) || empty($assunto) || empty($mensagem)) {
-        return false;
-    }
+//Load Composer's autoloader
+require 'vendor/autoload.php';
 
-    $remetente = "rsfreelas@gmail.com"; 
-    $headers = "From: $remetente\r\n";
-    $headers .= "Reply-To: $remetente\r\n";
-    $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
+if(isset($_POST['enviar'])){
 
-    if (mail($destinatario, $assunto, $mensagem, $headers)) {
-        return true;
-    } else {
-        return false;
-    }
+//Create an instance; passing `true` enables exceptions
+$mail = new PHPMailer(true);
+
+try {
+    //Server settings
+    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+    $mail->isSMTP();                                            //Send using SMTP
+    $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+    $mail->Username   = 'rsfreelas@gmail.com';                     //SMTP username
+    $mail->Password   = 'nisexandi2';                               //SMTP password
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+    $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+    //Recipients
+    $mail->setFrom('rsfreelas@gmail.com', 'Vinícius');
+    $mail->addAddress('rsfreelas@gmail.com', 'Vinícius');     //Add a recipient
+    $mail->addReplyTo('rsfreelas@gmail.com', 'Information');
+
+    //Content
+    $mail->isHTML(true);                                  //Set email format to HTML
+    $mail->Subject = 'Mensagem via Site';
+    $body = "Nome: ".$_POST['name']."<br>";
+    $mail->Body    = $body;
+    // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+    $mail->send();
+    echo 'E-mail enviado com sucesso';
+} catch (Exception $e) {
+    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nome = $_POST['name'];
-    $nome = $_POST['email'];
-    $destinatario = $_POST["phone"];
-    $assunto = $_POST["subject"];
-    $mensagem = $_POST["message"];
-
-    // Enviar e-mail
-    if (enviar_email($destinatario, $assunto, $mensagem)) {
-        echo "E-mail enviado com sucesso!";
-    } else {
-        echo "Erro ao enviar o e-mail. Por favor, tente novamente.";
-    }
+    
 }
-
-?>
