@@ -51,6 +51,20 @@
 
 <div class="preloader"></div>
 
+<style>
+    
+.btn-whatsapp {
+    width: 100px;
+    position: fixed;
+    right: 5px;
+    bottom: 70px;
+    z-index:99999;
+}
+
+</style>
+<a href="//wa.me/+5511981205983" target="_blank" class="btn-whatsapp">
+<img src="https://static.wixstatic.com/media/446600_d65f50b7f87049f38aa810040c5f9592~mv2.png/v1/fill/w_560,h_560,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/446600_d65f50b7f87049f38aa810040c5f9592~mv2.png" class="btn-whatsapp" title="Entre em Contato por WhatsApp" alt="Entre em Contato por WhatsApp">
+</a>
 
 <!-- Main header-->
 <header class="main-header header-style-one">
@@ -61,7 +75,7 @@
                
                 <div class="header-top-left pull-left">
                     <div class="logo">
-                        <a href="index.html"><h1 style="color:white;font-size:20px">Dr. José Claudio</h1></a>
+                        <a href="index.php"><h1 style="color:white;font-size:20px">Dr. José Claudio</h1></a>
                     </div>
                 </div>
                 <div class="header-top-right pull-right">
@@ -125,7 +139,7 @@
                                     <li><a href="#about">Sobre Nós</a></li>
                                     <li><a href="#services">Nossos Serviços</a></li>
                                     
-                                    <li><a href="#contact">Fale Conosco</a></li>
+                                    <li><a href="//wa.me/+5511981205983" target="_BLANK">Fale Conosco</a></li>
                                     <!-- <li class="dropdown"><a href="#">Pages</a>
                                         <ul>
                                             <li><a href="index.html">Home Page 01</a></li>
@@ -171,7 +185,7 @@
             <div class="clearfix">
                 <!--Logo-->
                 <div class="logo float-left">
-                    <a href="index.html" class="img-responsive"><p style="font-size:25px;color:white;margin-top:10px">Dr. José Claudio</p></a>
+                    <a href="index.php" class="img-responsive"><p style="font-size:25px;color:white;margin-top:10px">Dr. José Claudio</p></a>
                 </div>
                 <!--Right Col-->
                 <div class="right-col float-right">
@@ -191,7 +205,7 @@
         <div class="close-btn"><span class="icon flaticon-multiply"></span></div>
 
         <nav class="menu-box">
-            <div class="nav-logo"><a href="index.html"><img src="assets/images/resources/mobilemenu-logo.png" alt="" title=""></a></div>
+            <div class="nav-logo"><a href="index.php"><img src="assets/images/resources/mobilemenu-logo.png" alt="" title=""></a></div>
             <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--></div>
             <!--Social Links-->
             <div class="social-links">
@@ -221,7 +235,7 @@
                             <h2 style="color:white;font-size:60px">Advogado e <br>Consultor Jurídico<br></h2>
                         </div>
                         <div class="btns-box">
-                            <a class="btn-one style2" href="#contact"><span class="txt" style="color:white">Fale Conosco</span></a>
+                            <a class="btn-one style2" href="//wa.me/+5511981205983" TARGET="_BLANK"><span class="txt" style="color:white">Fale Conosco</span></a>
                         </div>
                     </div>
                 </div>
@@ -580,7 +594,7 @@
                                         <div class="input-box">    
                                             <textarea name="message" placeholder="Escreva sua Mensagem" required=""></textarea>
                                         </div>
-                                        <input type="submit" value="Enviar" name="enviar">
+                                        <input type="submit" value="Enviar" name="enviar" style="background-color:#ffc107; padding:10px 50px 10px 50px;border-radius:30px">
 
                                     </div>
                                 </div>
@@ -596,29 +610,13 @@
 </section>
 <!--End Contact Form Style1 Area-->
 
-<!--Start Home map area-->
-<section class="home-map-area">
-    <div class="home-map-outer">
-        <!--Map Canvas-->
-        <div class="map-canvas"
-            data-zoom="12"
-            data-lat="-23.5330"
-            data-lng="-46.6576"
-            data-type="roadmap"
-            data-hue="#ffc400"
-            data-title="Envato"
-            data-icon-path="assets/images/resources/map-marker.png"
-            data-content="Barra Funda, SP<br><a href='mailto:info@youremail.com'>info@youremail.com</a>">
-        </div>
-    </div>
-</section>  
-<!--End Home map area--> 
+
 
 
 
 
 <!--Start footer area-->  
-<footer class="footer-area">
+<footer class="footer-area" style="margin-top:200px">
     <div class="layer-outer">
         <div class="shape1 wow slideInLeft" data-wow-delay="100ms" data-wow-duration="2500ms" style="background-image: url(assets/images/shape/footer-shape-1.png)"></div>
         <div class="shape2 rotate-me">
