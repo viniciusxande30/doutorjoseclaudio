@@ -32,7 +32,7 @@ try {
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
     $mail->Subject = 'Doutor José Claudio - Cotação';
-    $body = "Nome: ".$_POST['name']."<br>"."Nome: ".$_POST['name']."<br>"."Nome: ".$_POST['name']."<br>".;
+    $body = "Nome: ".$_POST['name']."<br>"."E-mail: ".$_POST['e-mail']."<br>"."Telefone: ".$_POST['phone']."<br>"."Subject: ".$_POST['subject']."<br>".$_POST['message']."<br>";
     $mail->Body    = $body;
     // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
