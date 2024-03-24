@@ -13,7 +13,10 @@ if(isset($_POST['enviar'])){
 //Create an instance; passing `true` enables exceptions
 $mail = new PHPMailer(true);
 
+
 try {
+    // Definir o cabeçalho Content-Type para UTF-8
+    $mail->CharSet = 'UTF-8';
     //Server settings
     $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
     $mail->isSMTP();                                            //Send using SMTP
