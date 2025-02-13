@@ -886,7 +886,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <!-- Popup -->
     <div id="popup">
-        <img src="assets/images/jose-claudio.png" alt="José Claudio">
+        <img src="assets/images/holding.png" alt="José Claudio">
         <p>Fale com o Doutor José Claudio no WhatsApp:</p>
         <a href="https://wa.me/5511981205983" target="_blank">
             <button>Falar por WhatsApp</button>
