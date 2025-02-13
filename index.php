@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -43,12 +45,79 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-KC7KN4R5');</script>
 <!-- End Google Tag Manager -->
     
+
+
+
+
+
+
+<style>
+        /* Estilo para o popup */
+        #popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: none;
+            z-index: 1000;
+            text-align: center;
+        }
+
+        #popup img {
+            z-index:999;
+            width: 100%;
+            max-width: 430px;
+            margin-bottom: 10px;
+        }
+
+        #popup button {
+            background-color: #25d366; /* cor do WhatsApp */
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        /* Fundo escurecido */
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            z-index: 999;
+        }
+    </style>
+
+
+
+
+
+
+
+
 </head>
 
 
 
 
 <body>
+
+
+
+
+
+
+
+
     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KC7KN4R5"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -60,7 +129,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </style>
 <div class="boxed_wrapper ltr">
 
-<div class="preloader"></div>
+<!-- <div class="preloader"></div> -->
 
 <style>
     
@@ -806,5 +875,67 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATY4Rxc8jNvDpsK8ZetC7JyN4PFVYGCGM&callback=initMap">
 </script>
 
+
+
+
+
+
+
+    <!-- Overlay para fundo escurecido -->
+    <div id="overlay"></div>
+
+    <!-- Popup -->
+    <div id="popup">
+        <img src="assets/images/jose-claudio.png" alt="José Claudio">
+        <p>Fale com o Doutor José Claudio no WhatsApp:</p>
+        <a href="https://wa.me/5511981205983" target="_blank">
+            <button>Falar por WhatsApp</button>
+        </a>
+    </div>
+
+    <script>
+        // Função para exibir o popup
+        function showPopup() {
+            var popup = document.getElementById('popup');
+            var overlay = document.getElementById('overlay');
+
+            // Exibe o popup e o fundo escurecido
+            popup.style.display = 'block';
+            overlay.style.display = 'block';
+        }
+
+        // Função para fechar o popup
+        function closePopup() {
+            var popup = document.getElementById('popup');
+            var overlay = document.getElementById('overlay');
+
+            // Esconde o popup e o fundo escurecido
+            popup.style.display = 'none';
+            overlay.style.display = 'none';
+        }
+
+        // Exibir o popup assim que a página for carregada
+        window.onload = function() {
+            showPopup();
+        };
+
+        // Fechar o popup ao clicar no overlay
+        document.getElementById('overlay').onclick = function() {
+            closePopup();
+        };
+    </script>
+
+
+
+
+
+
 </body>
 </html>
+
+
+
+
+
+
+
